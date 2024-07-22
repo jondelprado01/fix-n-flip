@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html class="html-container" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fix & Flip Calculator</title>
+    <link rel="icon" type="image/x-icon" href="https://www.swcfund.com/wp-content/uploads/2021/11/Layer-1-1.webp">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/custom.js"></script>
+  </head>
+  <body>
+    <nav style="background-color: #137EB6;" class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+          <a class="navbar-item" href="https://www.swcfund.com/">
+            <img height="150" src="https://www.swcfund.com/wp-content/uploads/2021/11/Sierra-West-Funding-Logo-Without-BG-1.png.webp" alt="">
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div>
+              <input type="checkbox" class="checkbox toggle-theme" id="checkbox">
+              <label for="checkbox" class="checkbox-label">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <span class="ball"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+
+    <section class="section">
+      
+      <div class="container">
+
+        <p class="title is-2 has-text-centered">Flip Analysis</p>
+
+        <article class="message">
+          <div class="message-body">
+            Only the fields with &nbsp; <i class="fa-solid fa-asterisk red"></i> &nbsp; are changed. Remember the <strong>ARV</strong> & <strong>Rehab</strong> estimates drive the whole thing. 
+            By changing the <strong>"Cost to Buy"</strong>, it will adjust the <strong>"NET PROFIT"</strong>.
+          </div>
+        </article>
+
+        <div class="columns is-desktop">
+          <div class="column">
+            <div class="field">
+              <label class="label">
+                  Sales Price on Resale
+                  <span class="icon">
+                      <i class="far fa-question-circle"></i>
+                  </span>
+                  <i class="fa-solid fa-asterisk red"></i>
+              </label>
+              <input class="input is-hovered" type="text">
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="field">
+              <label class="label">
+                  Cost to Buy House
+                  <span class="icon">
+                    <i class="far fa-question-circle"></i>
+                  </span>
+                  <i class="fa-solid fa-asterisk red"></i>
+              </label>
+              <input class="input is-hovered" type="text">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="columns">
+
+          <div class="column">
+            <div class="card pt-2 pb-3">
+              <div class="card-content">
+                <div class="content">
+                  <table class="table is-hoverable is-fullwidth">
+                    <tbody>
+                      <tr>
+                        <td>Original difference</td>
+                        <td>$101,000</td>
+                      </tr>
+                      <tr>
+                        <td>Cost of Money for 1st lien</td>
+                        <td>($55,046)</td>
+                      </tr>
+                      <tr>
+                        <td>Purchase costs (Title, recording, loan policy, etc)</td>
+                        <td>($3,445)</td>
+                      </tr>
+                      <tr>
+                        <td>Sales costs (Title, recording, owner's policy, etc)</td>
+                        <td>($4,000)</td>
+                      </tr>
+                      <tr>
+                        <td>Buyer's agent realtor commisison (90% likelyhood)</td>
+                        <td>$0 </td>
+                      </tr>
+                      <tr>
+                        <td>Seller paid buyer's closing costs (negotiable)</td>
+                        <td>$0 </td>
+                      </tr>
+                      <tr>
+                        <td>Level of Repairs
+                          <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
+                        </td>
+                        <td>
+                          <div class="field">
+                            <div class="control">
+                              <div class="select is-fullwidth">
+                                <select>
+                                  <option>--</option>
+                                  <option>Basic</option>
+                                  <option>Medium</option>
+                                  <option>Everything</option>
+                                  <option>Other</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Rehab Costs</td>
+                        <td>($80,000)</td>
+                      </tr>
+                      <tr>
+                        <td>Basic</td>
+                        <td>$35 </td>
+                      </tr>
+                      <tr>
+                        <td>Medium</td>
+                        <td>$50 </td>
+                      </tr>
+                      <tr>
+                        <td>Everything</td>
+                        <td>$80 </td>
+                      </tr>
+                      <tr>
+                        <td>Other / exact bid
+                          <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
+                        </td>
+                        <td>
+                          <input class="input is-hovered" type="text">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Plus Purchase Commision (3% - If applicable) </td>
+                        <td>$0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+
+            <div class="card lb-card light-blue">
+              <div class="card-content">
+
+                <div class="columns">
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Annual Interest
+                        <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
+                      </label>
+                      <div class="control">
+                        <input class="input" type="text">
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label class="label">Loan Points
+                        <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
+                      </label>
+                      <div class="control">
+                        <input class="input" type="text">
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label class="label">Down Payment
+                        <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
+                      </label>
+                      <div class="control">
+                        <input class="input" type="text">
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label class="label">Hold time (Months)
+                        <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
+                      </label>
+                      <div class="control">
+                        <input class="input" type="text">
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="column">
+
+                    <div class="field">
+                      <label class="label">Commissions on Sale
+                        <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
+                      </label>
+                      <div class="control">
+                        <input class="input" type="text">
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label class="label">Potential Buyer's CC
+                        <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
+                      </label>
+                      <div class="control">
+                        <input class="input" type="text">
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label class="label">Home SF
+                        <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
+                      </label>
+                      <div class="control">
+                        <input class="input" type="text">
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card lb-card light-blue">
+              <div class="card-content">
+                <div class="columns">
+
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Estimated Rent
+                        <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
+                      </label>
+                      <div class="control">
+                        <input class="input" type="text">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Est. Pmt @ loan
+                        <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
+                      </label>
+                      <div class="control">
+                        <input class="input" type="text">
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="card lg-card light-green">
+              <div class="card-content has-text-centered">
+
+                <div class="columns">
+
+                  <div class="column">
+                    <h5 class="title is-5">$69,900</h5>
+                    <h6 class="subtitle is-6">Borrower Down</h6>
+                  </div>
+
+                  <div class="column">
+                    <h5 class="title is-5">$80,000</h5>
+                    <h6 class="subtitle is-6">Borrower Repair</h6>
+                  </div>
+
+                  <div class="column">
+                    <h5 class="title is-5">$149,900</h5>
+                    <h6 class="subtitle is-6">Borrower Cash In</h6>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- NET PROFIT SECTION -->
+        <div class="columns is-desktop mt-4 mb-4">
+          <div class="column is-full">
+            <div class="card lo-card light-orange">
+              <div class="card-content has-text-centered">
+                <div class="content">
+                  <p class="title is-1">$41,491</p>
+                  <p class="subtitle is-3">Net Profit</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OTHER INFOS SECTION -->
+         <div class="columns is-desktop has-text-centered mt-6 mb-6">
+          
+          <div class="column">
+            <div class="card">
+              <div class="card-content">
+                <div class="content">
+                  <p class="title is-3 is-spaced">87.38%</p>
+                  <p class="subtitle is-5">Purchase PRICE % of ARV</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <div class="card-content">
+                <div class="content">
+                  <p class="title is-3 is-spaced">87.38%</p>
+                  <p class="subtitle is-5">LOAN Amount % of ARV</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <div class="card-content">
+                <div class="content">
+                  <p class="title is-3 is-spaced">$6,029</p>
+                  <p class="subtitle is-5">Per month $$</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <div class="card-content">
+                <div class="content">
+                  <p class="title is-3 is-spaced">$629,100</p>
+                  <p class="subtitle is-5">Loan Funding</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+         </div>
+
+        <!-- METRICS SECTION -->
+        <div class="columns is-desktop has-text-centered">
+
+          <div class="column">
+            <div class="card g-card grey border-grey">
+              <header class="card-header">
+                <p class="card-header-title">Price Per SF, ARV</p>
+              </header>
+              <div class="card-content">
+                <div class="content">
+
+                  <h5 class="title is-5">$266.67</h5>
+                  <table class="table is-fullwidth g-table grey">
+                    <thead>
+                      <tr>
+                        <th>Profit as % of P.P.</th>
+                        <th>Profit as % of P.P. & Rehab</th>
+                        <th>Profit as % of Rehab</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>-5.94%</td>
+                        <td>-6.31%</td>
+                        <td>-51.86%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="card g-card grey border-grey">
+              <header class="card-header">
+                  <p class="card-header-title">Total Hard Costs</p>
+              </header>
+              <div class="card-content">
+                <div class="content">
+                  <h5 class="title is-5">$779,000</h5>
+                  <table class="table is-fullwidth g-table grey">
+                      <thead>
+                        <tr>
+                          <th>Purchase Price</th>
+                          <th>Remodel Costs</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>$699,000</td>
+                          <td>$80,000</td>
+                        </tr>
+                      </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="column">
+            <div class="card g-card grey border-grey">
+              <header class="card-header">
+                <p class="card-header-title">SOFT Costs</p>
+              </header>
+              <div class="card-content">
+                <div class="content">
+                  <h5 class="title is-5">$62,491</h5>
+                  <table class="table is-fullwidth g-table grey">
+                    <thead>
+                      <tr>
+                        <th>Title</th>
+                        <th>Buyer's Agent</th>
+                        <th>Buyer's CC</th>
+                        <th>Cost of Money</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>$7,445</td>
+                        <td>$0</td>
+                        <td>$0</td>
+                        <td>$55,046</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div style="height: 225px;" class="card g-card grey border-grey">
+              <div class="card-content">
+                <div class="content pt-5">
+                  <p class="title is-1">$841,491</p>
+                  <p class="subtitle is-3">All Costs</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="columns is-desktop mt-4 mb-4">
+          <div class="column is-full">
+            <div class="card">
+              <div class="card-content has-text-centered">
+                <div class="content">
+                  <p class="subtitle is-4"><strong class="has-text-link">80% Rule:  Buy price = (.8 x ARV) - Rehab</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-desktop mt-4 mb-4">
+
+          <div class="column">
+            <div class="card">
+              <div class="card-content">
+                <div class="content">
+                  <table class="table is-fullwidth">
+                    <tbody>
+                      <tr class="y-tr yellow">
+                        <td><b>Buy Price</b></td>
+                        <td><b>$560,000</b></td>
+                      </tr>
+                      <tr>
+                        <td>ARV</td>
+                        <td>$800,000</td>
+                      </tr>
+                      <tr>
+                        <td>Rehab</td>
+                        <td>($80,000)</td>
+                      </tr>
+                      <tr>
+                        <td>80% of ARV</td>
+                        <td>$640,000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card lo-card light-orange">
+              <div class="card-content">
+                <div class="content has-text-centered">
+                  <p class="subtitle is-5 mb-3">Net Profit based on inputs above but with 80% rule "Buy Price"</p>
+                  <h5 class="title is-5">$97,509</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="columns is-desktop mt-4 mb-4">
+          <div class="column is-full">
+            <div class="card">
+              <div class="card-content">
+                <div class="content">
+                  <table class="table is-fullwidth">
+                    <tbody>
+                      <tr>
+                        <td><b>Lender Break Even - Assuming Rehab is Complete</b></td>
+                        <td>$691,591</td>
+                        <td>86.45% LTV</td>
+                      </tr>
+                      <tr>
+                        <td><b>Lender Break Even - Assuming Rehab is NOT Complete</b></td>
+                        <td>$771,591</td>
+                        <td>96.45% LTV</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-desktop mt-4 mb-4">
+
+          <div class="column">
+            <div class="card lg-card light-green">
+              <div class="card-content">
+                <div class="content has-text-centered">
+                  <h5 class="title is-5">$69,900</h5>
+                  <p class="subtitle is-5">Down Payment</p><hr class="grey">
+
+                  <h5 class="title is-5">$80,000</h5>
+                  <p class="subtitle is-5">Rehab</p><hr class="grey">
+
+                  <h5 class="title is-5">$149,900</h5>
+                  <p class="subtitle is-5">Cash out of pocket</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <header class="card-header">
+                <p class="card-header-title">Metrics to compare</p>
+              </header>
+              <div class="card-content">
+                <div style="height: 193px;" class="content pt-5">
+                  <table class="table is-fullwidth">
+                    <tbody>
+                      <tr>
+                        <td>Detailed Flip % of PP to ARV</td>
+                        <td>87.38%</td>
+                      </tr>
+                      <tr>
+                        <td>80% Rule = this PP</td>
+                        <td>$560,000</td>
+                      </tr>
+                      <tr>
+                        <td>70% of ARV Rule = this PP</td>
+                        <td>$560,000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <footer style="background-color: #137EB6;" class="footer">
+      <div class="content has-text-centered has-text-white">
+        <p>
+          <strong>Fix & Flip Calculator</strong> by <a class="has-text-dark" href="https://www.swcfund.com/" target="_blank"> <strong>Matt Strong</strong> </a>.
+        </p>
+
+        <p>
+          Copyright © 2024 SIERRA-WEST FUNDING LLC | Powered by SIERRA-WEST FUNDING LLC
+        </p>
+      </div>
+    </footer>
+
+  </body>
