@@ -65,7 +65,7 @@
                   </span>
                   <i class="fa-solid fa-asterisk red"></i>
               </label>
-              <input class="input is-hovered" type="text">
+              <input class="input is-hovered input-fields" type="number" name="sales-price-resale">
             </div>
           </div>
 
@@ -78,7 +78,7 @@
                   </span>
                   <i class="fa-solid fa-asterisk red"></i>
               </label>
-              <input class="input is-hovered" type="text">
+              <input class="input is-hovered input-fields" type="number" name="cost-to-buy">
             </div>
           </div>
 
@@ -94,27 +94,27 @@
                     <tbody>
                       <tr>
                         <td>Original difference</td>
-                        <td>$101,000</td>
+                        <td class="od"></td>
                       </tr>
                       <tr>
                         <td>Cost of Money for 1st lien</td>
-                        <td>($55,046)</td>
+                        <td>(<span class="com"></span>)</td>
                       </tr>
                       <tr>
                         <td>Purchase costs (Title, recording, loan policy, etc)</td>
-                        <td>($3,445)</td>
+                        <td>(<span class="pc"></span>)</td>
                       </tr>
                       <tr>
                         <td>Sales costs (Title, recording, owner's policy, etc)</td>
-                        <td>($4,000)</td>
+                        <td>(<span class="sc"></span>)</td>
                       </tr>
                       <tr>
                         <td>Buyer's agent realtor commisison (90% likelyhood)</td>
-                        <td>$0 </td>
+                        <td class="barc"></td>
                       </tr>
                       <tr>
                         <td>Seller paid buyer's closing costs (negotiable)</td>
-                        <td>$0 </td>
+                        <td class="spbcc"></td>
                       </tr>
                       <tr>
                         <td>Level of Repairs
@@ -124,12 +124,12 @@
                           <div class="field">
                             <div class="control">
                               <div class="select is-fullwidth">
-                                <select>
+                                <select class="input-fields" name="level-repair">
                                   <option>--</option>
-                                  <option>Basic</option>
-                                  <option>Medium</option>
-                                  <option>Everything</option>
-                                  <option>Other</option>
+                                  <option value="Basic" cost-value="35">Basic</option>
+                                  <option value="Medium" cost-value="50">Medium</option>
+                                  <option value="Everything" cost-value="80">Everything</option>
+                                  <option value="Other">Other</option>
                                 </select>
                               </div>
                             </div>
@@ -138,31 +138,31 @@
                       </tr>
                       <tr>
                         <td>Rehab Costs</td>
-                        <td>($80,000)</td>
+                        <td>(<span class="rc"></span>)</td>
                       </tr>
                       <tr>
                         <td>Basic</td>
-                        <td>$35 </td>
+                        <td>$35</td>
                       </tr>
                       <tr>
                         <td>Medium</td>
-                        <td>$50 </td>
+                        <td>$50</td>
                       </tr>
                       <tr>
                         <td>Everything</td>
-                        <td>$80 </td>
+                        <td>$80</td>
                       </tr>
                       <tr>
                         <td>Other / exact bid
                           <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
                         </td>
                         <td>
-                          <input class="input is-hovered" type="text">
+                          <input class="input is-hovered input-fields" type="number" name="bid" value="80000">
                         </td>
                       </tr>
                       <tr>
                         <td>Plus Purchase Commision (3% - If applicable) </td>
-                        <td>$0</td>
+                        <td class="ppc"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -183,7 +183,7 @@
                         <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
                       </label>
                       <div class="control">
-                        <input class="input" type="text">
+                        <input class="input input-fields" type="number" name="annual-interest">
                       </div>
                     </div>
 
@@ -192,7 +192,7 @@
                         <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
                       </label>
                       <div class="control">
-                        <input class="input" type="text">
+                        <input class="input input-fields" type="number" name="loan-points">
                       </div>
                     </div>
 
@@ -201,7 +201,7 @@
                         <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
                       </label>
                       <div class="control">
-                        <input class="input" type="text">
+                        <input class="input input-fields" type="number" name="down-payment">
                       </div>
                     </div>
 
@@ -210,7 +210,7 @@
                         <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
                       </label>
                       <div class="control">
-                        <input class="input" type="text">
+                        <input class="input input-fields" type="number" name="hold-time">
                       </div>
                     </div>
 
@@ -223,7 +223,7 @@
                         <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
                       </label>
                       <div class="control">
-                        <input class="input" type="text">
+                        <input class="input input-fields" type="number" name="commission-sale">
                       </div>
                     </div>
 
@@ -232,7 +232,7 @@
                         <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
                       </label>
                       <div class="control">
-                        <input class="input" type="text">
+                        <input class="input input-fields" type="number" name="buyer-cc">
                       </div>
                     </div>
 
@@ -241,7 +241,7 @@
                         <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
                       </label>
                       <div class="control">
-                        <input class="input" type="text">
+                        <input class="input input-fields" type="number" name="home-sf">
                       </div>
                     </div>
 
@@ -262,7 +262,7 @@
                         <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
                       </label>
                       <div class="control">
-                        <input class="input" type="text">
+                        <input class="input input-fields" type="number" name="rent">
                       </div>
                     </div>
                   </div>
@@ -273,7 +273,7 @@
                         <span class="icon"><i class="far fa-question-circle"></i></span>&nbsp;<i class="fa-solid fa-asterisk red"></i>
                       </label>
                       <div class="control">
-                        <input class="input" type="text">
+                        <input class="input" type="number" name="pmt-loan">
                       </div>
                     </div>
                   </div>
@@ -288,17 +288,17 @@
                 <div class="columns">
 
                   <div class="column">
-                    <h5 class="title is-5">$69,900</h5>
+                    <h5 class="title is-5 bd">$0</h5>
                     <h6 class="subtitle is-6">Borrower Down</h6>
                   </div>
 
                   <div class="column">
-                    <h5 class="title is-5">$80,000</h5>
+                    <h5 class="title is-5 br">$0</h5>
                     <h6 class="subtitle is-6">Borrower Repair</h6>
                   </div>
 
                   <div class="column">
-                    <h5 class="title is-5">$149,900</h5>
+                    <h5 class="title is-5 bci">$0</h5>
                     <h6 class="subtitle is-6">Borrower Cash In</h6>
                   </div>
 
@@ -317,7 +317,7 @@
             <div class="card lo-card light-orange">
               <div class="card-content has-text-centered">
                 <div class="content">
-                  <p class="title is-1">$41,491</p>
+                  <p class="title is-1 np">$0</p>
                   <p class="subtitle is-3">Net Profit</p>
                 </div>
               </div>
@@ -332,7 +332,7 @@
             <div class="card">
               <div class="card-content">
                 <div class="content">
-                  <p class="title is-3 is-spaced">87.38%</p>
+                  <p class="title is-3 is-spaced pparv">0%</p>
                   <p class="subtitle is-5">Purchase PRICE % of ARV</p>
                 </div>
               </div>
@@ -343,7 +343,7 @@
             <div class="card">
               <div class="card-content">
                 <div class="content">
-                  <p class="title is-3 is-spaced">87.38%</p>
+                  <p class="title is-3 is-spaced laarv">0%</p>
                   <p class="subtitle is-5">LOAN Amount % of ARV</p>
                 </div>
               </div>
@@ -354,7 +354,7 @@
             <div class="card">
               <div class="card-content">
                 <div class="content">
-                  <p class="title is-3 is-spaced">$6,029</p>
+                  <p class="title is-3 is-spaced pmd">$0</p>
                   <p class="subtitle is-5">Per month $$</p>
                 </div>
               </div>
@@ -365,7 +365,7 @@
             <div class="card">
               <div class="card-content">
                 <div class="content">
-                  <p class="title is-3 is-spaced">$629,100</p>
+                  <p class="title is-3 is-spaced lf">$0</p>
                   <p class="subtitle is-5">Loan Funding</p>
                 </div>
               </div>
@@ -385,7 +385,7 @@
               <div class="card-content">
                 <div class="content">
 
-                  <h5 class="title is-5">$266.67</h5>
+                  <h5 class="title is-5 ppsf">$0</h5>
                   <table class="table is-fullwidth g-table grey">
                     <thead>
                       <tr>
@@ -396,9 +396,9 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>-5.94%</td>
-                        <td>-6.31%</td>
-                        <td>-51.86%</td>
+                        <td class="pp">0%</td>
+                        <td class="ppr">0%</td>
+                        <td class="pr">0%</td>
                       </tr>
                     </tbody>
                   </table>
@@ -413,7 +413,7 @@
               </header>
               <div class="card-content">
                 <div class="content">
-                  <h5 class="title is-5">$779,000</h5>
+                  <h5 class="title is-5 thc">$0</h5>
                   <table class="table is-fullwidth g-table grey">
                       <thead>
                         <tr>
@@ -423,8 +423,8 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td>$699,000</td>
-                          <td>$80,000</td>
+                          <td class="purpri">$0</td>
+                          <td class="rmc">$0</td>
                         </tr>
                       </tbody>
                   </table>
@@ -441,7 +441,7 @@
               </header>
               <div class="card-content">
                 <div class="content">
-                  <h5 class="title is-5">$62,491</h5>
+                  <h5 class="title is-5 sfc">$0</h5>
                   <table class="table is-fullwidth g-table grey">
                     <thead>
                       <tr>
@@ -453,10 +453,10 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>$7,445</td>
-                        <td>$0</td>
-                        <td>$0</td>
-                        <td>$55,046</td>
+                        <td class="tle">$0</td>
+                        <td class="ba">$0</td>
+                        <td class="bcc">$0</td>
+                        <td class="com">$</td>
                       </tr>
                     </tbody>
                   </table>
@@ -467,7 +467,7 @@
             <div style="height: 225px;" class="card g-card grey border-grey">
               <div class="card-content">
                 <div class="content pt-5">
-                  <p class="title is-1">$841,491</p>
+                  <p class="title is-1 allc">$0</p>
                   <p class="subtitle is-3">All Costs</p>
                 </div>
               </div>
@@ -499,19 +499,19 @@
                     <tbody>
                       <tr class="y-tr yellow">
                         <td><b>Buy Price</b></td>
-                        <td><b>$560,000</b></td>
+                        <td><b class="bp"></b></td>
                       </tr>
                       <tr>
                         <td>ARV</td>
-                        <td>$800,000</td>
+                        <td class="arv"></td>
                       </tr>
                       <tr>
                         <td>Rehab</td>
-                        <td>($80,000)</td>
+                        <td>(<span class="rehab"></span>)</td>
                       </tr>
                       <tr>
                         <td>80% of ARV</td>
-                        <td>$640,000</td>
+                        <td class="80arv"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -525,7 +525,7 @@
               <div class="card-content">
                 <div class="content has-text-centered">
                   <p class="subtitle is-5 mb-3">Net Profit based on inputs above but with 80% rule "Buy Price"</p>
-                  <h5 class="title is-5">$97,509</h5>
+                  <h5 class="title is-5 np80bp">$0</h5>
                 </div>
               </div>
             </div>
@@ -542,13 +542,13 @@
                     <tbody>
                       <tr>
                         <td><b>Lender Break Even - Assuming Rehab is Complete</b></td>
-                        <td>$691,591</td>
-                        <td>86.45% LTV</td>
+                        <td class="lbearc"></td>
+                        <td><span class="lbearcltv"></span>% LTV</td>
                       </tr>
                       <tr>
                         <td><b>Lender Break Even - Assuming Rehab is NOT Complete</b></td>
-                        <td>$771,591</td>
-                        <td>96.45% LTV</td>
+                        <td class="lbearnc"></td>
+                        <td><span class="lbearncltv"></span>% LTV</td>
                       </tr>
                     </tbody>
                   </table>
@@ -564,13 +564,13 @@
             <div class="card lg-card light-green">
               <div class="card-content">
                 <div class="content has-text-centered">
-                  <h5 class="title is-5">$69,900</h5>
+                  <h5 class="title is-5 dp">$0</h5>
                   <p class="subtitle is-5">Down Payment</p><hr class="grey">
 
-                  <h5 class="title is-5">$80,000</h5>
+                  <h5 class="title is-5 rehab">$0</h5>
                   <p class="subtitle is-5">Rehab</p><hr class="grey">
 
-                  <h5 class="title is-5">$149,900</h5>
+                  <h5 class="title is-5 cop">$0</h5>
                   <p class="subtitle is-5">Cash out of pocket</p>
                 </div>
               </div>
@@ -588,15 +588,15 @@
                     <tbody>
                       <tr>
                         <td>Detailed Flip % of PP to ARV</td>
-                        <td>87.38%</td>
+                        <td class="dfarv"></td>
                       </tr>
                       <tr>
                         <td>80% Rule = this PP</td>
-                        <td>$560,000</td>
+                        <td class="80pp"></td>
                       </tr>
                       <tr>
                         <td>70% of ARV Rule = this PP</td>
-                        <td>$560,000</td>
+                        <td class="70arvpp"></td>
                       </tr>
                     </tbody>
                   </table>
