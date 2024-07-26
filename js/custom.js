@@ -34,7 +34,23 @@ $(document).ready(function(){
         $(".html-container").attr("data-theme", localStorage.getItem('theme'));
     });
 
-    
+    function displayNum(class_name, value, sign_type, is_decimal_point){
+
+        let dollar = (sign_type == "dollar") ? "$" : "";  
+        let percent = (sign_type == "percent") ? "%" : "";  
+
+        if (class_name == "bp") {
+            console.log(value.toLocaleString("en"));
+        }
+        
+        if (is_decimal_point) {
+            value.toFixed(2);
+        }
+
+        $("."+class_name).html(dollar+value.toLocaleString("en")+percent);
+
+    }
+
     //CALCULATIONS
 
     var sales_price_resale = cost_to_buy = level_repair = bid = annual_interest = loan_points = down_payment = 
@@ -97,25 +113,25 @@ $(document).ready(function(){
 
                 //ORIGINAL DIFFERENCE
                 od = sales_price_resale - cost_to_buy;
-                $(".od").html("$"+od);
+                displayNum("od", od, "dollar", false);
 
                 if (down_payment != 0) {
 
                     //LOAN FUNDING - INACCURATE
                     lf = Math.abs(cost_to_buy * (1-down_payment));
-                    $(".lf").html("$"+lf);
+                    displayNum("lf", lf, "dollar", false);
 
                     if (annual_interest != 0) {
 
                         //COST OF MONEY 1ST LIEN - INACCURATE
                         if (loan_points != 0 && hold_time != 0) {
                             com = ((cost_to_buy * (1-down_payment) * loan_points) - (((cost_to_buy*(1-down_payment))*annual_interest/hold_time)*hold_time));
-                            $(".com").html("$"+com);
+                            displayNum("com", com, "dollar", false);
                         }
 
                         //PER MONTH $$ - INACCURATE
                         pmd = Math.abs((annual_interest * lf) / 12)
-                        $(".pmd").html("$"+pmd);
+                        displayNum("pmd", pmd, "dollar", false);
 
                     }
 
@@ -123,60 +139,60 @@ $(document).ready(function(){
 
                 //PURCHASE COST - INACCURATE
                 pc = cost_to_buy *(-0.0055)+400;
-                $(".pc").html("$"+pc);
-                $(".purpri").html("$"+pc);
+                displayNum("pc", pc, "dollar", false);
+                displayNum("purpri", pc, "dollar", false);
 
                 //Purchase PRICE % of ARV & LOAN Amount % of ARV & Detailed Flip % of PP to ARV
                 pparv = (cost_to_buy/sales_price_resale ) * 100;
-                $(".pparv").html(pparv.toFixed(2)+"%");
-                $(".laarv").html(pparv.toFixed(2)+"%");
-                $(".dfarv").html(pparv.toFixed(2)+"%");
+                displayNum("pparv", pparv, "percent", true);
+                displayNum("laarv", pparv, "percent", true);
+                displayNum("dfarv", pparv, "percent", true);
 
             }
 
             //SALES COST - INACCURATE
             sc = sales_price_resale * -(0.0055)+400;
-            $(".sc").html("$"+sc);
+            displayNum("sc", sc, "dollar", false);
 
             // BUYER'S AGENT REALTOR COMMISSION /   Buyer's Agent
             barc = sales_price_resale * commission_sale;
-            $(".barc").html("$"+barc);
-            $(".ba").html("$"+barc);
+            displayNum("barc", barc, "dollar", false);
+            displayNum("ba", barc, "dollar", false);
 
             //SELLER PAID BUYER'S CLOSING COSTS /   Buyer's CC
             spbcc = (commission_sale / 100) * sales_price_resale;
-            $(".spbcc").html("$"+spbcc);
-            $(".bcc").html("$"+spbcc);
+            displayNum("spbcc", spbcc, "dollar", false);
+            displayNum("bcc", spbcc, "dollar", false);
 
 
             //Price Per SF, ARV
             if (home_sf != 0) {
                 ppsf = sales_price_resale / home_sf;
-                $(".ppsf").html("$"+ppsf.toFixed(2));
+                displayNum("ppsf", ppsf, "dollar", true);
             }
 
             // ARV
-            $(".arv").html("$"+sales_price_resale);
+            displayNum("arv", sales_price_resale, "dollar", false);
 
             // 80% of ARV
             arv80 = sales_price_resale * 0.8;
-            $(".80arv").html("$"+arv80);
+            displayNum("80arv", arv80, "dollar", false);
 
             //BUY PRICE / 80% Rule = this PP
             bp = arv80 + rc;
-            $(".bp").html("$"+bp);
-            $(".80pp").html("$"+bp);
+            displayNum("bp", bp, "dollar", false);
+            displayNum("80pp", bp, "dollar", false);
 
         }
 
         //BORROWER DOWNPAYMENT
         bd = (down_payment / 100) * cost_to_buy;
-        $(".bd").html("$"+bd);
-        $(".dp").html("$"+bd);
+        displayNum("bd", bd, "dollar", false);
+        displayNum("dp", bd, "dollar", false);
 
         //BORROWER CASH IN
         bci = rc + bd;
-        $(".bci").html("$"+bci);
+        displayNum("bci", bci, "dollar", false);
 
         //REHAB COSTS & BORROWER REPAIR - INACCURATE
         if (home_sf != 0) {
@@ -203,74 +219,72 @@ $(document).ready(function(){
 
             if (input_cost_val != null) {
                 var rc = (repair_selected != "Other") ? Math.abs(-1 * home_sf * parseInt(input_cost_val)) : parseInt(input_cost_val);
-                $(".rc").html("$"+rc);
-                $(".br").html("$"+rc);
-                $(".rehab").html("$"+rc);
-                $(".rmc").html("$"+rc);
+                $.each(['rc','br','rehab','rmc'], function(index, value){
+                    displayNum(value, rc, "dollar", false);
+                });
             }
         }
 
         //NET PROFIT
         np = od + com + sc + barc + spbcc + rc;
-        $(".np").html("$"+np);
+        displayNum("np", np, "dollar", false);
 
         //TOTAL NET PROFIT
         tnp = np + ppc;
-        $(".tnp").html("$"+tnp);
+        displayNum("tnp", tnp, "dollar", false);
 
         //Profit as % of P.P.
         pp = np / cost_to_buy;
-        $(".pp").html(pp.toFixed(2)+"%");
+        displayNum("pp", pp, "percent", true);
 
         //Profit as % of P.P. & Rehab
         ppr = np / (cost_to_buy + np);
-        console.log(ppr.toFixed(2));
-        $(".ppr").html(ppr.toFixed(2)+"%");
+        displayNum("ppr", ppr, "percent", true);
 
         //Profit as % of Rehab
         pr = np / -rc;
-        $(".pr").html(pr.toFixed(2)+"%");
+        displayNum("pr", pr, "percent", true);
 
         //TOTAL HARD COST
         thc = cost_to_buy + rc;
-        $(".thc").html("$"+thc);
+        displayNum("thc", thc, "dollar", false);
 
         //SOFT COSTS
         sfc = com + spbcc + tle + barc;
-        $(".sfc").html("$"+sfc);
+        displayNum("sfc", sfc, "dollar", false);
 
         //TITLE
         tle = pc + sc;
-        $(".tle").html("$"+tle);
+        displayNum("tle", tle, "dollar", false);
 
         //ALL COSTS
         allc = thc + sfc;
-        $(".allc").html("$"+allc);
+        displayNum("allc", allc, "dollar", false);
 
         //Net Profit based on inputs above but with 80% rule "Buy Price" - INACCURATE
         let np80bp_sum = com + pc + sc + barc + spbcc;
         np80bp = ((sales_price_resale - bp ) + np80bp_sum + rc);
-        $(".np80bp").html("$"+np80bp);
+        displayNum("np80bp", np80bp, "dollar", false);
 
         //Lender Break Even - Assuming Rehab is Complete
         lbearc = lf + np80bp_sum;
         lbearcltv = lbearc / sales_price_resale;
-        $(".lbearc").html("$"+lbearc);
-        $(".lbearcltv").html(lbearcltv.toFixed(2)+"%");
+        displayNum("lbearc", lbearc, "dollar", false);
+        displayNum("lbearcltv", lbearcltv, "percent", true);
 
         //Lender Break Even - Assuming Rehab is NOT Complete
         lbearnc= lbearcltv + rc;
         lbearncltv = lbearnc + rc;
-        $(".lbearnc").html("$"+lbearnc);
-        $(".lbearncltv").html(lbearncltv.toFixed(2)+"%");
+        displayNum("lbearnc", lbearnc, "dollar", false);
+        displayNum("lbearncltv", lbearncltv, "percent", true);
 
         //Cash out of pocket
         cop = bd + rc;
-        $(".cop").html("$"+cop);
+        displayNum("cop", cop, "dollar", false);
 
         //70% of ARV Rule = this PP
         arv70 = sales_price_resale * 0.7;
-        $(".70arvpp").html("$"+arv70);
+        displayNum("70arvpp", arv70, "dollar", false);
 
     });
 
